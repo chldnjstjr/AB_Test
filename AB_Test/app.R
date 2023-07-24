@@ -54,9 +54,9 @@ server <- function(input, output) {
                     "99%" = 0.01)
     
     if (test$p.value < alpha) {
-      result <- "There is a statistically significant difference between Conversion A and Conversion B."
+      result <- "There is a statistically significant difference between Conversion A and Conversion B!"
     } else {
-      result <- "There is not a statistically significant difference between Conversion A and Conversion B."
+      result <- "There is not a statistically significant difference between Conversion A and Conversion B!"
     }
     
     output$result <- renderText(result)
