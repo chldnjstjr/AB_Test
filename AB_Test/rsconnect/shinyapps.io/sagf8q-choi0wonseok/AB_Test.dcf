@@ -1,0 +1,13 @@
+name: AB_Test
+title: AB_Test
+username:
+account: sagf8q-choi0wonseok
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9501174
+bundleId: 7491314
+url: https://sagf8q-choi0wonseok.shinyapps.io/AB_Test/
+when: 1690216465.84933
+lastSyncTime: 1690216465.84935
+asMultiple: FALSE
+asStatic: FALSE
