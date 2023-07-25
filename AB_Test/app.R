@@ -70,7 +70,7 @@ server <- function(input, output) {
     standard_error_diff <- sqrt(standard_error_a^2 + standard_error_b^2)
     z_score <- (conversion_rate_b - conversion_rate_a) / standard_error_diff
     p_value <- 2 * (1 - pnorm(abs(z_score)))
-    observed_power <- pnorm(z_score - qnorm(1 - alpha))
+    observed_power <- pnorm(z_score - qnorm(1 - alpha, 0, 1))
     
     # Display results
     output$conversion_rate_a <- renderText(paste0("Conversion Rate A: ", round(conversion_rate_a, 4)))
