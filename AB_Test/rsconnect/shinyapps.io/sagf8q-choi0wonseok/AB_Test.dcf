@@ -5,9 +5,9 @@ account: sagf8q-choi0wonseok
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9501174
-bundleId: 7491314
+bundleId: 7522178
 url: https://sagf8q-choi0wonseok.shinyapps.io/AB_Test/
-when: 1690216465.84933
-lastSyncTime: 1690216465.84935
+when: 1690972090.34959
+lastSyncTime: 1690972090.3496
 asMultiple: FALSE
 asStatic: FALSE
