@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 library(pwr)
+library(pwrAB)
 
 ui <- fluidPage(
   titlePanel("A/B Test Calculator"),
@@ -70,7 +71,14 @@ server <- function(input, output) {
     standard_error_diff <- sqrt(standard_error_a^2 + standard_error_b^2)
     z_score <- (conversion_rate_b - conversion_rate_a) / standard_error_diff
     p_value <- 2 * (1 - pnorm(abs(z_score)))
-    observed_power <- pnorm(z_score - qnorm(1 - alpha, 0, 1))
+    observed_power_result <- power.prop.test(
+      p1 = conversion_rate_a,
+      p2 = conversion_rate_b,
+      n = input$visitors_a+input$visitors_b, # or input$visitors_b if the sample sizes are equal
+      sig.level = alpha,
+      alternative = if (input$test_type == "One-sided") "one.sided" else "two.sided"
+    )
+    observed_power <- observed_power_result$power
     
     # Display results
     output$conversion_rate_a <- renderText(paste0("Conversion Rate A: ", round(conversion_rate_a, 4)))
